@@ -11,6 +11,16 @@ public class CabInvoiceGenerator {
         return totalFare <= 5 ? 5 : totalFare;
     }
 
+    public static double calculateFare(Ride[] rides){
+        double aggregateFare = 0.0;
+        for (Ride ride:rides) {
+            aggregateFare += calculateFare(ride.getDistance(), ride.getTime());
+        }
+        return aggregateFare;
 
+        }
     }
+
+
+
 
