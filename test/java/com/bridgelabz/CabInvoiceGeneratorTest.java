@@ -37,4 +37,15 @@ class CabInvoiceGeneratorTest {
         Assertions.assertEquals(expectedInvoice,actualInvoice);
     }
 
+    @Test
+    public void givenUserIDShouldReturnInvoice() {
+        Ride[] rides1 = {new Ride(10,5),new Ride(0.1,3),new Ride(5,9),new Ride(9,8)};
+        Ride[] rides2 = {new Ride(10,6),new Ride(0.1,3),new Ride(5,9),new Ride(9,8)};
+        RideRepository.customerList.add(new Customer(rides1, 1));
+        RideRepository.customerList.add(new Customer(rides2, 2));
+        Invoice actualInvoice = RideRepository.generateInvoiceByUserId(2);
+        Invoice expectedInvoice = new Invoice(268.0,4,67);
+        Assertions.assertEquals(expectedInvoice,actualInvoice);
+    }
+
     }
