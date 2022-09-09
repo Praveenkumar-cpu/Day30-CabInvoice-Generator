@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+
+//utilty class all method and var all static
 public class CabInvoiceGenerator {
 
     private static final double COST_PER_KM = 10;
